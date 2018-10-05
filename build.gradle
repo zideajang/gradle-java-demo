@@ -1,1 +1,11 @@
 apply plugin: 'java'
+
+sourceCompatibility = 1.8
+task execlass(type: JavaExec) {
+    classpath = files('./bin')
+    main = 'com.zidea.demo.Client'
+}
+// task myTask(type: JavaExec){
+//     main = 'com.zidea.demo.Client'
+//     classpath = runtimeClasspath
+// }

@@ -1,16 +1,1 @@
-task hello
-task world
-
-task helloWorld {
-    dependsOn = [world,hello]
-
-}
-
-hello{
-    print "hello"
-}
-
-world{
-    dependsOn 'hello'
-    println "world"
-}
+apply plugin: 'java'

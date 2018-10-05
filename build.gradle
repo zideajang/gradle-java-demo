@@ -7,7 +7,8 @@ task execlass(type: JavaExec) {
 }
 
 
-// task myTask(type: JavaExec){
-//     main = 'com.zidea.demo.Client'
-//     classpath = runtimeClasspath
-// }
+jar {
+    manifest{
+        attributes 'Main-Class': 'com.zidea.demo.Client'
+    }
+}

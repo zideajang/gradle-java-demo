@@ -1,8 +1,16 @@
-task hello{
+task hello
+task world
+
+task helloWorld {
+    dependsOn = [world,hello]
+
+}
+
+hello{
     print "hello"
 }
 
-task world{
+world{
     dependsOn 'hello'
     println "world"
 }

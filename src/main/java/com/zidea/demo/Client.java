@@ -10,9 +10,9 @@ import com.zidea.demo.model.Tut;
 
 public class Client {
 
-    final Pattern emailPattern = Pattern.compile("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$");
+    static Pattern emailPattern = Pattern.compile("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$");
 
-    final Function<String, Boolean> emailChecker = s -> emailPattern.matcher(s).matches();
+    static Function<String, Boolean> emailChecker = s -> emailPattern.matcher(s).matches();
 
     public void testMail(String email) {
         // if (emailPattern.matcher(email).matches()) {

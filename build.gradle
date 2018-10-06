@@ -1,13 +1,34 @@
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+
+repositories{
+    mavenCentral()
+}
+
+dependencies{
+    testCompile 'junit:junit:4.12'
+    compile "org.apache.commons:commons-lang3:3.8.1"
+}
+
 task execlass(type: JavaExec) {
     classpath = files('./bin')
     main = 'com.zidea.demo.Client'
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+    }
+}
+
 
 jar {
+    from configurations.compile.collect {
+        zipTree it
+    }
     manifest{
         attributes 'Main-Class': 'com.zidea.demo.Client'
     }
